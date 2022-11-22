@@ -44,7 +44,7 @@ class Entity implements ArrayAccess, Arrayable
      *
      * @var string
      */
-    // protected $entity;
+    protected $entity;
 
     /**
      * The primary key for the entity.
@@ -181,11 +181,6 @@ class Entity implements ArrayAccess, Arrayable
      * @var bool
      */
     private $exists;
-
-    /**
-     * @var string
-     */
-    private $entity;
 
     /**
      * Construct a new Entity
@@ -370,7 +365,7 @@ class Entity implements ArrayAccess, Arrayable
      */
     public function getKey()
     {
-        return $this->getAttribute($this->getKeyName());
+        return $this->getProperty($this->getKeyName());
     }
 
     /**
